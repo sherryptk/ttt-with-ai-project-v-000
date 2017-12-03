@@ -10,7 +10,7 @@ until play == "n"
   number_players = gets.strip
   puts "Who would like to be X?"
   first_player = gets.strip
-  # binding.pry
+  binding.pry
 
     if number_players == 0
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
