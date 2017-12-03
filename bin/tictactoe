@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
 require_relative '../config/environment'
-play = "y"
+play = nil
+
 puts "Welcome to Tic Tac Toe"
 until play == "n"
+  
   puts "Would you like to play with 0, 1, or 2 players?"
   number_players = gets
   puts "Who would like to be X?"
   first_player = gets
+  
     if number_players == 0
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
       until game.over?
@@ -33,10 +36,6 @@ until play == "n"
         game.play
       end
     end
-    # 
-    # until game.over?
-    #   game.play
-    # end
 
   puts "Would you like to play again? y or n"
   play = gets
