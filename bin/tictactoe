@@ -20,7 +20,7 @@ until play == "n"
       game = Game.new(player_1 = Players::Human.new(")"), player_2 = Players::Human.new("X"), board = Board.new)
     end
 
-    until game.over?
+    until game.won?
       game.play
     end
 
