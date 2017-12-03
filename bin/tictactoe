@@ -10,6 +10,7 @@ until play == "n"
   number_players = gets
   puts "Who would like to be X?"
   first_player = gets
+  binding.pry
 
     if number_players == 0
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
@@ -26,7 +27,6 @@ until play == "n"
     elsif number_players == 2 && first_player == 2
       game = Game.new(player_1 = Players::Human.new(")"), player_2 = Players::Human.new("X"), board = Board.new)
     else
-      binding.pry
 
     end
 
