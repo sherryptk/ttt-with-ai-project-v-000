@@ -27,6 +27,7 @@ until play == "n"
       game = Game.new(player_1 = Players::Human.new(")"), player_2 = Players::Human.new("X"), board = Board.new)
 
     end
+    binding.pry
 
     until game.over?
       game.play
