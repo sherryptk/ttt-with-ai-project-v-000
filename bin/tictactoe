@@ -9,19 +9,34 @@ until play == "n"
   first_player = gets
     if number_players == 0
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
+      until game.over?
+        game.play
+      end
     elsif number_players == 1 && first_player == 1
       game = Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
+      until game.over?
+        game.play
+      end
     elsif number_players == 1 && first_player == 2
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
+      until game.over?
+        game.play
+      end
     elsif number_players == 2 && first_player == 1
       game = Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
+      until game.over?
+        game.play
+      end
     elsif number_players == 2 && first_player == 2
       game = Game.new(player_1 = Players::Human.new(")"), player_2 = Players::Human.new("X"), board = Board.new)
+      until game.over?
+        game.play
+      end
     end
-
-    until game.over?
-      game.play
-    end
+    # 
+    # until game.over?
+    #   game.play
+    # end
 
   puts "Would you like to play again? y or n"
   play = gets
