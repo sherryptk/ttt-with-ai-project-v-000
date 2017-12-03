@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require_relative '../config/environment'
+require 'pry'
 play = nil
 
 puts "Welcome to Tic Tac Toe"
@@ -12,19 +13,19 @@ until play == "n"
 
     if number_players == 0
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
-      
+
     elsif number_players == 1 && first_player == 1
       game = Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O"), board = Board.new)
-      
+
     elsif number_players == 1 && first_player == 2
       game = Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
-      
+
     elsif number_players == 2 && first_player == 1
       game = Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
-      
+
     elsif number_players == 2 && first_player == 2
       game = Game.new(player_1 = Players::Human.new(")"), player_2 = Players::Human.new("X"), board = Board.new)
-      
+
     end
 
     until game.over?
